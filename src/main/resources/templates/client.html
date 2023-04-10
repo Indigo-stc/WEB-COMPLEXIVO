@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="/css/cliente.css">
+</head>
+<body>
+<div class="container">
+  <form th:action="@{/api/cliente/form}" method="get">
+    <button class="insert" type="submit">Agregar</button>
+  </form>
+</div>
+<div>
+  <h1>Listado de clientes</h1>
+  <table>
+    <tr>
+      <th >Cédula</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Dirección</th>
+      <th>Estado</th>
+      <th>Acción</th>
+    </tr>
+    <tr th:each="cliente : ${clientes}">
+      <td th:text="${cliente.cedula}"></td>
+      <td th:text="${cliente.nombre}"></td>
+      <td th:text="${cliente.apellido}"></td>
+      <td th:text="${cliente.direccion}"></td>
+      <td th:text="${cliente.estado}"></td>
+      <td>
+        <form th:action="@{/api/cliente/eliminar/{id}(id=${cliente.idCliente})}" method="post">
+          <button class="delete" type="submit">Eliminar</button>
+        </form>
+
+        <form th:action="@{/api/cliente/editar/{id}(id=${cliente.idCliente})}" method="get">
+          <button class="update" type="submit">Eliminar</button>
+        </form>
+
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

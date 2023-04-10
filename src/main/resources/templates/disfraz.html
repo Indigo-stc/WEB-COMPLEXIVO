@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Crear Disfraz</title>
+  <link rel="stylesheet" href="/css/disfraz.css">
+</head>
+<body>
+<h1>Crear Disfraz</h1>
+<form action="/disfraz" method="post">
+  <label for="codigo">Código:</label>
+  <input type="text" id="codigo" name="codigo" required>
+
+  <label for="descripcion">Descripción:</label>
+  <input type="text" id="descripcion" name="descripcion" required>
+
+  <label for="precio">Precio:</label>
+  <input type="number" id="precio" name="precio" required>
+
+  <label for="tipo">Tipo:</label>
+  <input type="text" id="tipo" name="tipo" required>
+
+
+  <input type="submit" value="Crear">
+</form>
+</body>
+</html>
